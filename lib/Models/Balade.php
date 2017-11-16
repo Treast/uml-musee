@@ -10,11 +10,11 @@ namespace \Models;
 class Balade {
     /* @var int $id  */
     private $id;
-/* @var \\Models\Flaneur $flaneur  */
-    private $flaneur;
-/* @var \\Models\Atmosphere $atmosphere  */
-    private $atmosphere;
-/* @var \\Models\Oeuvre[] $oeuvres  */
+/* @var int $flaneurId  */
+    private $flaneurId;
+/* @var int $atmosphereId  */
+    private $atmosphereId;
+/* @var int[] $oeuvres  */
     private $oeuvres;
 /* @var string $nom  */
     private $nom;
