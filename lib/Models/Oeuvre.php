@@ -2,22 +2,37 @@
 /*
  * Oeuvre
  */
-namespace \Models;
+namespace Models;
+use Doctrine\ORM\Mapping as ORM;
 
-/*
- * Oeuvre
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="oeuvre")
  */
 class Oeuvre {
-    /* @var int $id  */
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     */
     private $id;
-/* @var string $nom  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $nom;
-/* @var string $artiste  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $artiste;
-/* @var int $annee  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $annee;
-/* @var string $musee  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $musee;
-/* @var string $description  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $description;
 }

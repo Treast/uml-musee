@@ -2,24 +2,35 @@
 /*
  * Balade
  */
-namespace \Models;
+namespace Models;
 
 /*
  * Balade
  */
 class Balade {
-    /* @var int $id  */
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     */
     private $id;
-/* @var int $flaneurId  */
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $flaneurId;
 /* @var int $atmosphereId  */
     private $atmosphereId;
 /* @var int[] $oeuvres  */
     private $oeuvres;
-/* @var string $nom  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $nom;
-/* @var string $description  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $description;
-/* @var DateTime $dateRealisation  */
+    /**
+     * @ORM\Column(type="datetime")
+     */
     private $dateRealisation;
 }

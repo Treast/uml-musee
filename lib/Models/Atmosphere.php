@@ -2,7 +2,7 @@
 /*
  * Atmosphere
  */
-namespace \Models;
+namespace Models;
 
 /*
  * Atmosphere
