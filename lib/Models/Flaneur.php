@@ -2,26 +2,44 @@
 /*
  * Flaneur
  */
-namespace \Models;
+namespace Models;
 
-/*
- * Flaneur
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="flaneur")
  */
 class Flaneur {
-    /* @var int $id  */
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="id")
+     */
     private $id;
-/* @var string $nom  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $nom;
-/* @var string $prenom  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $prenom;
-/* @var string $login  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $login;
-/* @var string $motPasse  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $motPasse;
-/* @var string $telephone  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $telephone;
-/* @var string $mail  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $mail;
-/* @var string $adresse  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $adresse;
 }

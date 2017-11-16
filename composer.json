@@ -3,5 +3,10 @@
   "require": {
     "slim/slim": "3.*",
     "doctrine/orm": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Models\\": "lib\\Models\\"
+    }
   }
 }
