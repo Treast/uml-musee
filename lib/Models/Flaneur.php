@@ -3,15 +3,16 @@
  * Flaneur
  */
 namespace Models;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="flaneur")
+ * @ORM\Table(name="flaneurs")
  */
 class Flaneur {
     /**
      * @ORM\Id
-     * @ORM\Column(type="id")
+     * @ORM\Column(type="integer")
      */
     private $id;
     /**

@@ -3,9 +3,11 @@
  * Balade
  */
 namespace Models;
+use Doctrine\ORM\Mapping as ORM;
 
-/*
- * Balade
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="balades")
  */
 class Balade {
     /**
@@ -14,12 +16,16 @@ class Balade {
      */
     private $id;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="flaneur_id")
      */
     private $flaneurId;
-/* @var int $atmosphereId  */
+    /**
+     * @ORM\Column(type="integer", name="atmosphere_id")
+     */
     private $atmosphereId;
-/* @var int[] $oeuvres  */
+    /**
+     * @ORM\OneToMany(targetEntity="BaladeOeuvre",  mappedBy="balade")
+     */
     private $oeuvres;
     /**
      * @ORM\Column(type="string")
@@ -33,4 +39,16 @@ class Balade {
      * @ORM\Column(type="datetime")
      */
     private $dateRealisation;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Flaneur")
+     * @ORM\JoinColumn(name="flaneur_id", referencedColumnName="id")
+     */
+    private $flaneur;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Atmosphere")
+     * @ORM\JoinColumn(name="atmosphere_id", referencedColumnName="id")
+     */
+    private $atmosphere;
 }

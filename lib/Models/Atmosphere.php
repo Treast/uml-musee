@@ -3,13 +3,20 @@
  * Atmosphere
  */
 namespace Models;
+use Doctrine\ORM\Mapping as ORM;
 
-/*
- * Atmosphere
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="atmospheres")
  */
 class Atmosphere {
-    /* @var int $id  */
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     */
     private $id;
-/* @var string $nom  */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $nom;
 }

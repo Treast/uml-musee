@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="oeuvre")
+ * @ORM\Table(name="oeuvres")
  */
 class Oeuvre {
     /**
@@ -35,4 +35,8 @@ class Oeuvre {
      * @ORM\Column(type="string")
      */
     private $description;
+    /**
+     * @ORM\OneToMany(targetEntity="BaladeOeuvre", mappedBy="oeuvre")
+     */
+    private $balades;
 }
