@@ -67,7 +67,7 @@ $app->GET('/api/balades/findByFlaneur/{flaneurId}', function(Request $request, R
  * Notes: 
  * Output-Formats: [application/json]
  */
-$app->GET('/api/balades/{baladeId}', function($request, $response, $args) {
+$app->GET('/api/balades/{baladeId}', function(Request $request, Response $response, array $args) {
     $response->write('How about implementing getBaladeItem as a GET method ?');
     return $response;
 });
@@ -79,7 +79,7 @@ $app->GET('/api/balades/{baladeId}', function($request, $response, $args) {
  * Notes: 
  * Output-Formats: [application/json]
  */
-$app->POST('/api/balades', function($request, $response, $args) {
+$app->POST('/api/balades', function(Request $request, Response $response, array $args) {
     $body = $request->getParsedBody();
     $response->write('How about implementing postBaladeItem as a POST method ?');
     return $response;
@@ -92,7 +92,7 @@ $app->POST('/api/balades', function($request, $response, $args) {
  * Notes: 
  * Output-Formats: [application/json]
  */
-$app->GET('/api/flaneurs/{flaneurLogin}/{flaneurMotPasse}', function($request, $response, $args) {
+$app->GET('/api/flaneurs/{flaneurLogin}/{flaneurMotPasse}', function(Request $request, Response $response, array $args) {
     $response->write('How about implementing getFlaneurItemByCredentials as a GET method ?');
     return $response;
 });
@@ -104,7 +104,7 @@ $app->GET('/api/flaneurs/{flaneurLogin}/{flaneurMotPasse}', function($request, $
  * Notes: 
  * Output-Formats: [application/json]
  */
-$app->GET('/api/oeuvres', function($request, $response, $args) {
+$app->GET('/api/oeuvres', function(Request $request, Response $response, array $args) {
     $response->write('How about implementing getOeuvreCollection as a GET method ?');
     return $response;
 });
@@ -116,7 +116,7 @@ $app->GET('/api/oeuvres', function($request, $response, $args) {
  * Notes: 
  * Output-Formats: [application/json]
  */
-$app->GET('/api/oeuvres/{oeuvreId}', function($request, $response, $args) {
+$app->GET('/api/oeuvres/{oeuvreId}', function(Request $request, Response $response, array $args) {
     $response->write('How about implementing getOeuvreItem as a GET method ?');
     return $response;
 });
@@ -128,7 +128,7 @@ $app->GET('/api/oeuvres/{oeuvreId}', function($request, $response, $args) {
  * Notes: 
  * Output-Formats: [application/json]
  */
-$app->POST('/api/oeuvres', function($request, $response, $args) {
+$app->POST('/api/oeuvres', function(Request $request, Response $response, array $args) {
     $body = $request->getParsedBody();
     $response->write('How about implementing postOeuvreItem as a POST method ?');
     return $response;

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6795b3e8-d481-441f-bd6d-4b487720400b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,9 +46,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="68" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="231">
+              <caret line="130" column="80" lean-forward="false" selection-start-line="130" selection-start-column="80" selection-end-line="130" selection-end-column="80" />
+              <folding>
+                <element signature="e#53#75#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,12 +153,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510838006129</updated>
-      <workItem from="1510838007371" duration="527000" />
+      <workItem from="1510838007371" duration="805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="527000" />
+    <option name="totallyTimeSpent" value="805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -227,9 +228,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="68" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="231">
+          <caret line="130" column="80" lean-forward="false" selection-start-line="130" selection-start-column="80" selection-end-line="130" selection-end-column="80" />
+          <folding>
+            <element signature="e#53#75#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
