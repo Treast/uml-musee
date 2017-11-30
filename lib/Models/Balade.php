@@ -9,10 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="balades")
  */
-class Balade {
+class Balade implements \JsonSerializable {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
@@ -283,5 +284,24 @@ class Balade {
     public function getAtmosphere()
     {
         return $this->atmosphere;
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return json_encode([
+            'id' => $this->getId(),
+            'flaneur' => $this->getFlaneur(),
+            'atmosphere' => $this->getAtmosphere(),
+            'nom' => $this->getNom(),
+            'dateRealisation' => $this->getDateRealisation(),
+            'oeuvres' => $this->getOeuvres()
+        ]);
     }
 }

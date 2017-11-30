@@ -9,10 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="oeuvres")
  */
-class Oeuvre {
+class Oeuvre implements \JsonSerializable {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
@@ -35,6 +36,10 @@ class Oeuvre {
      * @ORM\Column(type="string")
      */
     private $description;
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $photo;
     /**
      * @ORM\OneToMany(targetEntity="BaladeOeuvre", mappedBy="oeuvre")
      */
@@ -168,6 +173,22 @@ class Oeuvre {
     }
 
     /**
+     * @return mixed
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param mixed $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    /**
      * Set description
      *
      * @param string $description
@@ -223,5 +244,25 @@ class Oeuvre {
     public function getBalades()
     {
         return $this->balades;
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return json_encode([
+            'id' => $this->getId(),
+            'nom' => $this->getNom(),
+            'artiste' => $this->getArtiste(),
+            'annee' => $this->getAnnee(),
+            'musee' => $this->getMusee(),
+            'description' => $this->getDescription(),
+            'photo' => $this->getPhoto()
+        ]);
     }
 }
