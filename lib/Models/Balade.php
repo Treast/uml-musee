@@ -295,13 +295,13 @@ class Balade implements \JsonSerializable {
      */
     public function jsonSerialize()
     {
-        return json_encode([
+        return [
             'id' => $this->getId(),
             'flaneur' => $this->getFlaneur(),
             'atmosphere' => $this->getAtmosphere(),
             'nom' => $this->getNom(),
-            'dateRealisation' => $this->getDateRealisation(),
+            'dateRealisation' => $this->getDateRealisation()->format('Y-m-d'),
             'oeuvres' => $this->getOeuvres()
-        ]);
+        ];
     }
 }

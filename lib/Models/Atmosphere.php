@@ -78,9 +78,9 @@ class Atmosphere implements \JsonSerializable {
      */
     public function jsonSerialize()
     {
-        return json_encode([
+        return [
             'id' => $this->getId(),
             'nom' => $this->getNom()
-        ]);
+        ];
     }
 }

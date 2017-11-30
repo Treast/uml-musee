@@ -246,7 +246,7 @@ class Flaneur implements \JsonSerializable {
      */
     public function jsonSerialize()
     {
-        return json_encode([
+        return [
             'id' => $this->getId(),
             'nom' => $this->getNom(),
             'prenom' => $this->getPrenom(),
@@ -255,6 +255,6 @@ class Flaneur implements \JsonSerializable {
             'telephone' => $this->getTelephone(),
             'mail' => $this->getMail(),
             'adresse' => $this->getAdresse()
-        ]);
+        ];
     }
 }

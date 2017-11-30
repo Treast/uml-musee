@@ -255,7 +255,7 @@ class Oeuvre implements \JsonSerializable {
      */
     public function jsonSerialize()
     {
-        return json_encode([
+        return [
             'id' => $this->getId(),
             'nom' => $this->getNom(),
             'artiste' => $this->getArtiste(),
@@ -263,6 +263,6 @@ class Oeuvre implements \JsonSerializable {
             'musee' => $this->getMusee(),
             'description' => $this->getDescription(),
             'photo' => $this->getPhoto()
-        ]);
+        ];
     }
 }
