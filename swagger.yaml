@@ -1,0 +1,318 @@
+swagger: '2.0'
+info:
+  description: >-
+    This is a sample server Petstore server.  You can find out more about    
+    Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net,
+    #swagger](http://swagger.io/irc/).      For this sample, you can use the api
+    key `special-key` to test the authorization     filters.
+  version: 1.0.0
+  title: Swagger Petstore
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: 'localhost:8080'
+basePath: /api
+tags:
+  - name: flaneurs
+  - name: balades
+  - name: oeuvres
+  - name: atmospheres
+schemes:
+  - http
+paths:
+  '/balades/{baladeId}':
+    get:
+      tags:
+        - balades
+      summary: Find balade by ID
+      operationId: getBaladeItem
+      produces:
+        - application/json
+      parameters:
+        - name: baladeId
+          in: path
+          description: ID of balade to return
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Balade'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Balade not found
+  '/balades/findByFlaneur/{flaneurId}':
+    get:
+      tags:
+        - balades
+      summary: Find balades by Flaneur ID
+      operationId: getBaladeCollectionByFlaneur
+      produces:
+        - application/json
+      parameters:
+        - name: flaneurId
+          in: path
+          description: ID of flaneur
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Balade'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Balade not found
+  /balades:
+    post:
+      tags:
+        - balades
+      summary: Create a Balade
+      operationId: postBaladeItem
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Created Balade object
+          required: true
+          schema:
+            $ref: '#/definitions/Balade'
+      responses:
+        default:
+          description: successful operation
+  '/oeuvres/{oeuvreId}':
+    get:
+      tags:
+        - oeuvres
+      summary: Find oeuvre by ID
+      operationId: getOeuvreItem
+      produces:
+        - application/json
+      parameters:
+        - name: oeuvreId
+          in: path
+          description: ID of oeuvre to return
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Oeuvre'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Oeuvre not found
+  /oeuvres:
+    get:
+      tags:
+        - oeuvres
+      summary: Find all oeuvres
+      operationId: getOeuvreCollection
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Oeuvre'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Oeuvre not found
+    post:
+      tags:
+        - oeuvres
+      summary: Create Oeuvre object
+      operationId: postOeuvreItem
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Created Oeuvre object
+          required: true
+          schema:
+            $ref: '#/definitions/Oeuvre'
+      responses:
+        default:
+          description: successful operation
+  '/atmospheres/{atmosphereId}':
+    get:
+      tags:
+        - atmospheres
+      summary: Find Atmosphere by ID
+      operationId: getAtmosphereItem
+      produces:
+        - application/json
+      parameters:
+        - name: atmosphereId
+          in: path
+          description: ID of atmosphere to return
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Atmosphere'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Atmosphere not found
+  /atmospheres:
+    get:
+      tags:
+        - atmospheres
+      summary: Find all atmospheres
+      operationId: getAtmosphereCollection
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Atmosphere'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Atmosphere not found
+    post:
+      tags:
+        - atmospheres
+      summary: Create Atmosphere object
+      operationId: postAtmosphereItem
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Created Atmosphere object
+          required: true
+          schema:
+            $ref: '#/definitions/Atmosphere'
+      responses:
+        default:
+          description: successful operation
+  '/flaneurs/{flaneurLogin}/{flaneurMotPasse}':
+    get:
+      tags:
+        - flaneurs
+      summary: Find flaneur by credentials
+      operationId: getFlaneurItemByCredentials
+      produces:
+        - application/json
+      parameters:
+        - name: flaneurLogin
+          in: path
+          description: Login of flaneur to return
+          required: true
+          type: string
+        - name: flaneurMotPasse
+          in: path
+          description: MotPasse of flaneur to return
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Flaneur'
+        '400':
+          description: Invalid credentials supplied
+        '404':
+          description: Flaneur not found
+definitions:
+  Flaneur:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      nom:
+        type: string
+      prenom:
+        type: string
+      login:
+        type: string
+      motPasse:
+        type: string
+      telephone:
+        type: string
+      mail:
+        type: string
+        format: email
+      adresse:
+        type: string
+  Balade:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      flaneur_id:
+        type: integer
+        format: int64
+      atmosphere_id:
+        type: integer
+        format: int64
+      oeuvres:
+        type: array
+        items:
+          type: integer
+          format: int64
+      nom:
+        type: string
+      description:
+        type: string
+      dateRealisation:
+        type: string
+        format: date-time
+  Atmosphere:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      nom:
+        type: string
+  Oeuvre:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      nom:
+        type: string
+      artiste:
+        type: string
+      annee:
+        type: integer
+        format: int64
+      musee:
+        type: string
+      description:
+        type: string
